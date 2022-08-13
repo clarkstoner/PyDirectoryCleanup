@@ -9,6 +9,7 @@ setup(name='PyDirectoryCleanup',
       packages=['PyDirectoryCleanup',
                 'PyDirectoryCleanup.src'],
       install_requires=['watchdog'],
+      scripts=['PyDirectoryCleanup/bin/config_generator.py'],
       description='A simple program to keep a directory clean on your machine using Python and Watchdog',
       long_description=open('README.txt').read(),
       )
