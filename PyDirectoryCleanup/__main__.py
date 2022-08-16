@@ -1,5 +1,6 @@
 from watchdog.observers import Observer
 from src.FileHandler import FileHandler
+import sys
 import time
 import logging
 import configparser
@@ -10,7 +11,9 @@ config_file.read("./conf.ini")
 source_dir = config_file["source_dir"]["directory_to_watch"]
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO,
+    if(len(sys.argv) > 1):
+        if(sys.argv[1] == "-d"):
+            logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(message)s',
                         datefmt='%Y-%mcl-%d %H:%M:%S')
     path = source_dir
